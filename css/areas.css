@@ -1,0 +1,72 @@
+.container{
+    width: 100%;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+
+    grid-template-columns: 300px repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+
+    grid-template-areas: "Navegacion    Navegacion    Navegacion    Navegacion     Navegacion"
+                         "aside         article       article       article        article"
+                         "aside         section       section       section        section"
+                         "aside         section       section       section        section"
+                         "footer        footer        footer        footer         footer";
+
+}
+.container nav{
+    grid-area: Navegacion;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+.container aside{
+    text-align: center;
+    grid-area: aside;
+    height: 600px;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+.container .article{
+    grid-area: article;
+}
+.container section{
+    grid-area: section;
+}
+.container footer{
+    grid-area: footer;
+    background: #1C2833;
+    color: #fff;
+    
+    padding: 20px;
+    text-align: center;
+}
+@media screen and (max-width: 750px){
+    .container{
+        grid-template-areas: "Navegacion    Navegacion    Navegacion    Navegacion     Navegacion"
+                             "aside         aside         aside         aside          aside"
+                             "article       article       article       article        article"
+                             "section       section       section       section        section"
+                             "section       section       section       section        section"
+                             "footer        footer        footer        footer         footer";
+
+    }
+    .container aside{
+        height: 400px;
+    }
+    .container aside .ima{
+        display: block;
+    }
+    nav .nav li{
+        margin: 5px;
+    }
+}
